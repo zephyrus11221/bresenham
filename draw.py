@@ -127,4 +127,39 @@ def draw_line6( screen, x0, y0, x1, y1, color ):
             d-=a
         y-=1
         d-=b
- 
+
+def draw_line_less( screen, x0, y0, x1, y1, color ):
+    b = x0-x1
+    a = y1-y0
+    d = a + 2*b
+    x = x0
+    y = y0
+    a *= 2
+    b *= 2
+    if b>0:
+        dx = -1
+    else:
+        dx = 1
+    if a<0:
+        dy = -1
+    else:
+        dy = 1
+    print dy
+    d= abs(d)
+    a = abs(a)
+    b = abs(b) * -1
+    while x!=x1:
+        plot (screen, color, x, y)
+        if d>0:
+            y+=dy
+            d+=b
+        x+=dx
+        d+=a
+
+
+
+
+
+
+
+
